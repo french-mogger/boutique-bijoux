@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumière & Or - Bijoux d'Exception</title>
+<style>
+:root {
+--primary: #d4af37; / Or /
+--secondary: #1a1a1a; / Noir profond /
+--light: #f9f9f9;
+--font-main: 'Helvetica Neue', sans-serif;
+}
+
+body {
+font-family: var(--font-main);
+margin: 0;
+padding: 0;
+background-color: var(--light);
+color: var(--secondary);
+}
+
+/ Header /
+header {
+background: white;
+padding: 20px 50px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+position: sticky;
+top: 0;
+z-index: 100;
+}
+
+.logo {
+font-size: 24px;
+font-weight: bold;
+color: var(--primary);
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+
+nav ul {
+list-style: none;
+display: flex;
+gap: 30px;
+}
+
+nav a {
+text-decoration: none;
+color: var(--secondary);
+font-weight: 500;
+transition: color 0.3s;
+}
+
+nav a:hover {
+color: var(--primary);
+}
+
+.cart-icon {
+cursor: pointer;
+position: relative;
+}
+
+.cart-count {
+position: absolute;
+top: -10px;
+right: -10px;
+background: var(--primary);
+color: white;
+border-radius: 50%;
+width: 20px;
+height: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 12px;
+}
+
+/ Hero Section /
+.hero {
+background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+background-size: cover;
+background-position: center;
+height: 80vh;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+color: white;
+}
+
+.hero-content h1 {
+font-size: 4rem;
+margin-bottom: 20px;
+font-weight: 300;
+}
+
+.btn {
+padding: 15px 40px;
+background: var(--primary);
+color: white;
+text-decoration: none;
+text-transform: uppercase;
+letter-spacing: 1px;
+border: none;
+cursor: pointer;
+transition: background 0.3s;
+}
+
+.btn:hover {
+background: #b89628;
+}
+
+/ Produits /
+.products-section {
+padding: 80px 50px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.section-title {
+text-align: center;
+margin-bottom: 50px;
+font-size: 2rem;
+color: var(--secondary);
+}
+
+.product-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 40px;
+}
+
+.product-card {
+background: white;
+padding: 20px;
+text-align: center;
+transition: transform 0.3s;
+border: 1px solid #eee;
+}
+
+.product-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.product-img {
+width: 100%;
+height: 250px;
+object-fit: cover;
+margin-bottom: 15px;
+background-color: #f0f0f0; / Placeholder color /
+}
+
+.product-name {
+font-size: 1.1rem;
+margin-bottom: 10px;
+}
+
+.product-price {
+color: var(--primary);
+font-weight: bold;
+font-size: 1.2rem;
+margin-bottom: 15px;
+display: block;
+}
+
+.add-to-cart {
+width: 100%;
+padding: 10px;
+background: var(--secondary);
+color: white;
+border: none;
+cursor: pointer;
+transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+background: var(--primary);
+}
+
+/ Footer /
+footer {
+background: var(--secondary);
+color: white;
+padding: 50px;
+text-align: center;
+margin-top: 50px;
+}
+
+/ Mobile Responsive /
+@media (max-width: 768px) {
+.hero-content h1 { font-size: 2.5rem; }
+header { padding: 15px 20px; }
+nav ul { display: none; } / Simplified for demo */
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<header>
+<div class="logo">Lumière & Or</div>
+<nav>
+<ul>
+<li><a href="#">Accueil</a></li>
+<li><a href="#">Bagues</a></li>
+<li><a href="#">Colliers</a></li>
+<li><a href="#">Bracelets</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+<div class="cart-icon" onclick="alert('Panier ouvert !')">
+🛒 <span class="cart-count">0</span>
+</div>
+</header>
+
+<!-- Hero Banner -->
+<section class="hero">
+<div class="hero-content">
+<h1>L'Élégance Intemporelle</h1>
+<p style="font-size: 1.2rem; margin-bottom: 30px;">Découvrez notre collection</p>
+<a href="#shop" class="btn">Voir la Collection</a>
+</div>
+</section>
+
+<!-- Shop Section -->
+<section id="shop" class="products-section">
+<h2 class="section-title">Nos Meilleures Ventes</h2>
+<div class="product-grid">
+<!-- Product 1 -->
+<div class="product-card">
+<h3 class="product-name">Bague Solitaire Éternelle</h3>
+<span class="product-price">129,00 €</span>
+<button class="add-to-cart" onclick="addToCart()">Ajouter au panier</button>
+</div>
+<!-- Product 2 -->
+<div class="product-card">
+<h3 class="product-name">Collier de Perles Naturelles</h3>
+<span class="product-price">89,00 €</span>
+<button class="add-to-cart" onclick="addToCart()">Ajouter au panier</button>
+</div>
+<!-- Product 3 -->
+<div class="product-card">
+<h3 class="product-name">Bracelet Chaîne Argent</h3>
+<span class="product-price">59,00 €</span>
+<button class="add-to-cart" onclick="addToCart()">Ajouter au panier</button>
+</div>
+<!-- Product 4 -->
+<div class="product-card">
+<h3 class="product-name">Boucles d'Oreilles Diamant</h3>
+<span class="product-price">199,00 €</span>
+<button class="add-to-cart" onclick="addToCart()">Ajouter au panier</button>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<p>&copy; 2023 Lumière & Or. Tous droits réservés.</p>
+<p style="font-size: 0.8rem; color: #ccc;">Mentions Légales | Politique de Confidentialité | CGV</p>
+</footer>
+
+<script>
+let count = 0;
+function addToCart() {
+count++;
+document.querySelector('.cart-count').innerText = count;
+// Animation simple pour montrer l'ajout
+const btn = event.target;
+const originalText = btn.innerText;
+btn.innerText = "Ajouté !";
+btn.style.background = "#2ecc71";
+setTimeout(() => {
+btn.innerText = originalText;
+btn.style.background = "var(--secondary)";
+}, 1000);
+}
+</script>
+</body>
+</html>
